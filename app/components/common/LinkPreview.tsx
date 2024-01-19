@@ -38,7 +38,7 @@ function LinkPreview({ url }: Props) {
           doc
             .querySelector('meta[property="og:image"]')
             ?.getAttribute("content") || "";
-
+        console.log(image);
         setPreviewData({ title, description, image });
         setLoading(false);
       } catch (error) {
@@ -67,7 +67,7 @@ function LinkPreview({ url }: Props) {
       className="flex flex-col max-w-[300px] border rounded-md hover:scale-95 hover:bg-[rgba(255,255,255,0.2)] transition-all duration-400"
     >
       {previewData.image && (
-        <Image
+        <img
           className="rounded-t-md"
           src={previewData.image}
           alt="Link Preview"

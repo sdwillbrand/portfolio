@@ -1,7 +1,6 @@
 "use client";
 import { FaGolang } from "react-icons/fa6";
-import { SiSvelte } from "react-icons/si";
-import LinkPreview from "../LinkPreview";
+import LinkPreview from "../common/LinkPreview";
 import { HTMLProps } from "react";
 
 const CurrentStudy = ({ className }: HTMLProps<HTMLDivElement>) => (
