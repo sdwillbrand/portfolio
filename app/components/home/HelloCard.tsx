@@ -1,6 +1,7 @@
 import { FaEarlybirds, FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { HTMLProps } from "react";
+import Link from "next/link";
 
 const socialMedias = [
   {
@@ -25,14 +26,14 @@ const HelloCard = ({ className }: HTMLProps<HTMLDivElement>) => (
       </div>
       <div className="flex gap-5 mt-2 md:mt-0">
         {socialMedias.map(({ href, logo }, key) => (
-          <a
+          <Link
             className="rounded-md p-1 border border-gray-800 hover:scale-95 hover:bg-[rgba(255,255,255,0.1)]"
             key={key}
             target="_blank"
             href={href}
           >
             {logo}
-          </a>
+          </Link>
         ))}
       </div>
     </div>

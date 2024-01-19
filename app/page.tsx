@@ -11,9 +11,9 @@ export default function Home() {
         <InfiniteWrite messages={[", Developer", " Dennis Willbrand"]} />
       </h1>
       <div className="w-full grid md:grid-cols-8 p-5 gap-2">
-        <HelloCard className=" border-indigo-700 border rounded-2xl w-full md:col-span-5 p-6 md:p-16" />
-        <CurrentStudyCard className="rounded-3xl w-full md:col-span-6 p-6 md:p-16" />
-        <Contact className="border-indigo-500 border rounded-3xl w-full md:col-span-2 p-10 md:p-16" />
+        <HelloCard className=" border-indigo-700 border rounded-2xl w-full md:col-span-8 p-6 md:p-16" />
+        <CurrentStudyCard className="rounded-3xl w-full md:col-span-8 lg:col-span-6 p-6 md:p-16" />
+        <Contact className="border-indigo-500 border rounded-3xl w-full md:col-span-8 lg:col-span-2 p-10 md:p-6" />
       </div>
     </main>
   );

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { HTMLProps } from "react";
 import { MdAlternateEmail } from "react-icons/md";
 
@@ -13,7 +14,7 @@ const Contact = ({ className }: HTMLProps<HTMLDivElement>) => {
 
   return (
     <div
-      className={`${className} bg-gradient-to-l from-sky-600 to-indigo-900 flex items-center justify-around`}
+      className={`${className} bg-gradient-to-bl to-sky-600 from-indigo-900 flex md:flex-col md:gap-5 items-center justify-around`}
     >
       <div>
         <p className="text-2xl">Contact me</p>
@@ -21,13 +22,13 @@ const Contact = ({ className }: HTMLProps<HTMLDivElement>) => {
           Make a contact via email or twitter DMs.
         </p>
       </div>
-      <a
+      <Link
         href="mailto:so.willbrand@gmail.com"
         onClick={handleCopy}
         className="border rounded-md p-4 border-[rgba(255,255,255,0.2)] cursor-pointer hover:bg-[rgba(255,255,255,0.3)] transition"
       >
         <MdAlternateEmail size={30} />
-      </a>
+      </Link>
     </div>
   );
 };
