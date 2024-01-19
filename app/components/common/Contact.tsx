@@ -18,9 +18,7 @@ const Contact = ({ className }: HTMLProps<HTMLDivElement>) => {
     >
       <div>
         <p className="text-2xl">Contact me</p>
-        <p className="pt-2 text-sm text-gray-200">
-          Make a contact via email or twitter DMs.
-        </p>
+        <p className="pt-2 text-sm text-gray-200">Make a contact via email.</p>
       </div>
       <Link
         href="mailto:so.willbrand@gmail.com"
