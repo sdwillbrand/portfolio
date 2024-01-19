@@ -7,7 +7,7 @@ const nextConfig = {
             port: '',
             pathname: '/**',
         },]
-    }
+    }, output: 'export',
 }
 
 module.exports = nextConfig
