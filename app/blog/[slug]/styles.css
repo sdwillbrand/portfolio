@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+article {
+  @apply max-w-2xl;
+}
+
+article > h1 {
+  @apply text-3xl mt-2 mb-6;
+}
+
+article > pre {
+  @apply !text-sm rounded-md;
+}

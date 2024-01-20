@@ -1,14 +1,14 @@
 import { getAllBlogData } from "../lib/posts";
+import BlogPreview from "./BlogPreview";
 
 const Blog = () => {
   const blogs = getAllBlogData();
   return (
-    <main>
-      <ul>
-        {blogs.map((blog, key) => (
-          <li key={key}>{blog.data.title}</li>
-        ))}
-      </ul>
+    <main className="flex items-center flex-col mt-10 gap-5">
+      <h1 className="text-3xl">Blog</h1>
+      {blogs.map((blog) => (
+        <BlogPreview key={blog.slug} blog={blog} />
+      ))}
     </main>
   );
 };

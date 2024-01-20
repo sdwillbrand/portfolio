@@ -1,30 +1,30 @@
-import { readFileSync, readdirSync } from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
-import { Blog } from "../typings/Blog";
+import { readFileSync, readdirSync } from "fs";
+import { Blog, GreyMatterBlog } from "../typings/Blog";
 
 const blogDirectory = path.join(process.cwd(), "content");
 
-export function getAllBlogData() {
+export function getAllBlogData(): GreyMatterBlog[] {
   const fileNames = readdirSync(blogDirectory);
 
-  return fileNames.map((fileName) => ({
-    slug: fileName.replace(/\.md$/, ""),
-    ...matter(readFileSync(path.join(blogDirectory, fileName), "utf8")),
-  }));
+  return fileNames.map((fileName) => {
+    const matterBlog = matter(
+      readFileSync(path.join(blogDirectory, fileName), "utf8")
+    );
+    return {
+      slug: fileName.replace(/\.md$/, ""),
+      ...matterBlog,
+      data: {
+        ...matterBlog.data,
+        date: matterBlog.data.date && new Date(matterBlog.data.date),
+      },
+    };
+  });
 }
 
-export async function getBlogData(slug: string): Promise<Blog> {
+export function getBlogData(slug: string): GreyMatterBlog {
   const blogs = getAllBlogData();
-  const blog = blogs.find((blog) => blog.slug === slug);
-
-  const processedContent = await remark().use(html).process(blog?.content);
-  const content = processedContent.toString();
-
-  return {
-    title: blog?.data?.title,
-    content,
-  };
+  const blog = blogs.find((blog) => blog.slug === slug)!;
+  return blog;
 }

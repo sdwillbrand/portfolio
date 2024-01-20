@@ -1,23 +1,41 @@
 import { getAllBlogData, getBlogData } from "@/app/lib/posts";
-
-export const dynamicParams = false;
-
+import Image from "next/image";
+import Markdown from "react-markdown";
+import "./styles.css";
+import Head from "next/head";
 interface Props {
   params: { slug: string };
 }
 
-const Page = async ({ params }: Props) => {
-  const blog = await getBlogData(params.slug);
+const Page = ({ params }: Props) => {
+  const {
+    data: { imageUrl, title },
+    content,
+  } = getBlogData(params.slug);
   return (
-    <article>
-      <div dangerouslySetInnerHTML={{ __html: blog.content }} />
-    </article>
+    <div className="flex place-content-center items-center w-screen flex-col gap-5 md:px-24">
+      {imageUrl && (
+        <Image
+          className="max-w-full object-cover h-auto"
+          src={imageUrl}
+          width={600}
+          height={150}
+          alt={title!}
+          priority
+        />
+      )}
+      <article className="mb-5">
+        <Markdown>{content}</Markdown>
+      </article>
+    </div>
   );
 };
 
 export function generateStaticParams() {
   const blogs = getAllBlogData();
-  return blogs;
+  return blogs.map((blog) => ({
+    slug: blog.slug,
+  }));
 }
 
 export default Page;
