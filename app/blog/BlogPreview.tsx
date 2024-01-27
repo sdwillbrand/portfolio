@@ -20,7 +20,7 @@ const BlogPreview = ({ blog }: Props) => {
             alt={blog.data.title ?? ""}
           />
         )}
-        <div className="p-5 group-hover:-translate-y-1 transition-all">
+        <div className="pt-5 px-5 group-hover:-translate-y-1 transition-all">
           {blog.data.date && (
             <div className="text-sm text-gray-500">
               {blog.data.date.toLocaleDateString("en-us", {

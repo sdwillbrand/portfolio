@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 interface Props {
-  url: string;
+  readonly url: string;
 }
 
 interface Preview {
@@ -67,12 +67,13 @@ function LinkPreview({ url }: Props) {
       className="flex flex-col max-w-[300px] border rounded-md hover:scale-95 hover:bg-[rgba(255,255,255,0.2)] transition-all duration-400"
     >
       {previewData.image && (
-        <img
+        <Image
           className="rounded-t-md"
           src={previewData.image}
           alt="Link Preview"
           width={300}
           height={100}
+          priority
         />
       )}
       <div className="p-2">

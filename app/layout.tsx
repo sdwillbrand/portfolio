@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
-import Link from "next/link";
-import Head from "next/head";
+import Header from "./components/common/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,8 +26,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
-      <Script src="/prism.js" />
+      <body className={`${inter.className} w-screen md:px-24 px-8`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

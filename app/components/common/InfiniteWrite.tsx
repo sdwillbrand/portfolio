@@ -1,7 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
+import { HTMLProps, useEffect, useState } from "react";
 
-interface Props {
+interface Props extends HTMLProps<HTMLSpanElement> {
   messages: string[];
 }
 
@@ -10,14 +10,14 @@ enum WriteState {
   DECREMENT,
 }
 
-const InfiniteWrite = ({ messages }: Props) => {
+const InfiniteWrite = ({ messages, className }: Props) => {
   const [counter, setCounter] = useState(0);
   const [writeState, setWriteState] = useState(WriteState.INCREMENT);
   const [msg, setMsg] = useState("");
   const [bufferMsg, setBufferMsg] = useState(messages[counter]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const interval = setInterval(async () => {
       if (writeState === WriteState.DECREMENT && !bufferMsg && !msg) {
         setCounter((prev) => {
           const next = (prev + 1) % messages.length;
@@ -41,7 +41,7 @@ const InfiniteWrite = ({ messages }: Props) => {
     return () => clearInterval(interval);
   }, [bufferMsg, counter, messages, msg, writeState]);
 
-  return <span className="text-gray-700">{msg}</span>;
+  return <span className={`${className} text-gray-700`}>{msg}</span>;
 };
 
 export default InfiniteWrite;
