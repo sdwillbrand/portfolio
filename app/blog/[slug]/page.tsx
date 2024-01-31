@@ -14,7 +14,7 @@ const Page = ({ params }: Props) => {
     content,
   } = getBlogData(params.slug);
   return (
-    <main>
+    <main className="md:px-24 px-2">
       <div className="flex place-content-center items-center flex-col gap-10 md:gap-5">
         {imageUrl && (
           <Image
@@ -30,7 +30,6 @@ const Page = ({ params }: Props) => {
           <Markdown>{content}</Markdown>
         </article>
       </div>
-      <Script src="/prism.js" />
     </main>
   );
 };

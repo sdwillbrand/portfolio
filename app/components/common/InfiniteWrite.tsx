@@ -41,7 +41,7 @@ const InfiniteWrite = ({ messages, className }: Props) => {
     return () => clearInterval(interval);
   }, [bufferMsg, counter, messages, msg, writeState]);
 
-  return <span className={`${className} text-gray-700`}>{msg}</span>;
+  return <span className={`${className ?? ""} text-gray-700`}>{msg}</span>;
 };
 
 export default InfiniteWrite;

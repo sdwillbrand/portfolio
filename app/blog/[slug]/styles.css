@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 article {
-  @apply max-w-2xl;
+  @apply max-w-5xl;
 }
 
 article h1 {

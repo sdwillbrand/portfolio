@@ -1,4 +1,5 @@
 interface Metadata {
+  active: boolean;
   date: Date;
   imageUrl: string;
   title: string;

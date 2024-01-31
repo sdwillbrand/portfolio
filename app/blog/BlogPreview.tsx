@@ -10,10 +10,10 @@ interface Props {
 const BlogPreview = ({ blog }: Props) => {
   return (
     <Link href={`/blog/${blog.slug}`}>
-      <div className="border rounded-lg pb-4 border-indigo-700 cursor-pointer hover:scale-95 hover:bg-[rgba(255,255,255,0.1)] transition-all group max-w-[400px]">
+      <div className="border rounded-lg pb-4 border-indigo-700 cursor-pointer hover:scale-95 hover:bg-[rgba(255,255,255,0.1)] transition-all group max-w-md md:max-w-lg w-[70vw]">
         {blog.data.imageUrl && (
           <Image
-            className="rounded-t-lg max-w-full object-cover"
+            className="rounded-t-lg w-full"
             src={blog.data.imageUrl}
             width={400}
             height={150}

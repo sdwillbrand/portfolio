@@ -5,11 +5,7 @@ import HelloCard from "./components/home/HelloCard";
 
 export default function Home() {
   return (
-    <main>
-      <div className="w-full flex top-0 left-0 absolute text-2xl items-center place-content-center pt-10">
-        Sono{""}
-        <InfiniteWrite messages={[", Developer", ", Dennis Willbrand"]} />
-      </div>
+    <main className="md:px-24 px-2">
       <div className="w-full grid md:grid-cols-8 py-5 gap-3">
         <HelloCard className=" border-indigo-700 border rounded-2xl w-full md:col-span-8 p-6 md:p-16" />
         <CurrentStudyCard className="rounded-3xl w-full md:col-span-8 lg:col-span-6 p-6 md:p-16" />
