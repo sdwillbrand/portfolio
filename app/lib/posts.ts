@@ -12,7 +12,7 @@ export function getAllBlogData(): GreyMatterBlog[] {
       readFileSync(path.join(blogDirectory, fileName), "utf8")
     );
     return {
-      slug: fileName.replace(/\.md$/, ""),
+      slug: fileName.replace(/\.mdx$/, ""),
       ...matterBlog,
       orig: undefined,
       data: {
