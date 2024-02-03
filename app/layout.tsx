@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     "Golang",
     "Software Development",
   ],
+  robots: "index, follow",
 };
 
 export default function RootLayout({
