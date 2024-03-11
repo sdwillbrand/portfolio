@@ -1,3 +1,0 @@
-User-agent: *
-Sitemap: https://sdwillbrand.com/sitemap.xml
-Sitemap: https://sdwillbrand.com/blog/sitemap.xml
