@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="w-full">
       <hr />
       <div className="flex items-center justify-between p-2 text-[8px] md:text-xs">
         <p>© Alle Rechte vorbehalten</p>

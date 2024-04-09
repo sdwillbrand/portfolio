@@ -2,7 +2,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "@/app/favicon/apple-touch-icon.png";
-import { useState } from "react";
 import { motion } from "framer-motion";
 
 const Header = () => {
@@ -11,7 +10,7 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 50, delay: 0.5 }}
-      className="sticky top-0 z-10 flex w-full items-center justify-between border bg-amber-50 py-4"
+      className="fixed z-10 flex w-full items-center justify-between border bg-amber-50 py-2"
     >
       <Link href="/">
         <Image
@@ -25,11 +24,11 @@ const Header = () => {
         <Link href="/" className="text-gray-600">
           Home
         </Link>
-        <Link href="/about" className="text-gray-600">
-          Über mich
-        </Link>
         <Link href="/kontakt" className="text-gray-600">
           Kontakt
+        </Link>
+        <Link href="/impressum" className="text-gray-600">
+          Impressum
         </Link>
       </div>
     </motion.header>
