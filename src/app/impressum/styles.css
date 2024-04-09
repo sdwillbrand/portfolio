@@ -1,0 +1,15 @@
+main {
+  @apply flex flex-col items-center;
+}
+
+section {
+  @apply grid max-w-screen-lg grid-cols-1 px-20;
+}
+
+h1 {
+  @apply my-10 text-6xl;
+}
+
+h2 {
+  @apply mb-2 mt-5 text-2xl;
+}

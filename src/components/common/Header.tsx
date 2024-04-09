@@ -11,9 +11,7 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 50, delay: 0.5 }}
-      className={
-        "sticky top-0 flex w-full  items-center justify-between border py-4"
-      }
+      className="sticky top-0 z-10 flex w-full items-center justify-between border bg-amber-50 py-4"
     >
       <Link href="/">
         <Image
