@@ -6,7 +6,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://sdwillbrand.com",
     },
     {
-      url: "https://sdwillbrand.com/blog",
+      url: "https://sdwillbrand.com/impressum",
+    },
+    {
+      url: "https://sdwillbrand.com/datenschutz",
+    },
+    {
+      url: "https://sdwillbrand.com/kontakt",
     },
   ];
 }
