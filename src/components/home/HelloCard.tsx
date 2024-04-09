@@ -1,9 +1,8 @@
 import { HTMLProps } from "react";
-import Link from "next/link";
 
 const HelloCard = ({ className }: HTMLProps<HTMLDivElement>) => (
-  <div id="hello" className={`${className} p-5 pl-10`}>
-    <p className="py-6 text-7xl md:py-10 md:text-5xl">
+  <div id="hello" className={`${className} p-5 md:pl-12`}>
+    <p className="py-6 text-4xl transition md:py-12 md:text-7xl">
       Webkonstrukteur <br />
       mit Kreativität
     </p>

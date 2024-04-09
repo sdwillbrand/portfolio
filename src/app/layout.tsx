@@ -2,22 +2,16 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "../components/common/Header";
+import Footer from "@/components/common/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3000"),
-  title: "Sono Dennis Willbrand - Software Developer",
+  title: "Sono Dennis Willbrand - Webdesigner mit Kreativität",
   description:
-    "I am passionate about mastering new skills and relentlessly tackle challenges, constantly assessing my progress and growth.",
-  keywords: [
-    "React",
-    "Allgäu",
-    "TypeScript",
-    "JavaScript",
-    "Golang",
-    "WebDesign",
-  ],
+    "Ich genieße die Kreativität des Webdesigns und tauche gerne in endlosen Möglichkeiten ein. Ich suche ständig nach Möglichkeiten, meine Fähigkeiten innovativ einzusetzen, angetrieben von meiner Liebe zur Gestaltung ansprechenden Webseiten.",
+  keywords: ["HTML", "CSS", "JavaScript", "Wordpress", "Webdesign"],
   robots: "index, follow",
   openGraph: {
     images: "/favicon.ico",
@@ -34,6 +28,7 @@ export default function RootLayout({
       <body className={`${inter.className} w-screen`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
